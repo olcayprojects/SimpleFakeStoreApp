@@ -1,0 +1,82 @@
+# .NET Core / .NET 5+ / .NET 6+ / ASP.NET Core
+bin/
+obj/
+lib/
+*.dll
+*.exe
+*.pdb
+*.dbmdl
+*.bak
+*.log
+*.tmp
+*.swp
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.csproj.user
+*.csproj.*.user
+*.ncb
+*.sdf
+*.vsp
+*.vspscc
+*.vssscc
+*.sln.docstates
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.suo
+*.suo*
+*.csproj.user
+
+# VS Code settings
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# macOS system files
+.DS_Store
+
+# Linux system files
+*~
+
+# Archive files
+*.7z
+*.gz
+*.zip
+*.tar
+*.rar
+*.xz
+*.bz2
+*.tgz
+
+# NPM
+node_modules/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables file
+.env
+.env.local
+.env.*.local

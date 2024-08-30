@@ -1,0 +1,67 @@
+﻿@page
+@model SimpleFakeStoreApp.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <h4>Categories</h4>
+            <div class="d-flex flex-wrap mb-3">
+                <a href="#" class="btn btn-primary category-link" data-category="">All</a>
+                @foreach (var category in Model.Categories)
+                {
+                    <a href="#" class="btn btn-outline-secondary category-link" data-category="@category">@category</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        @if (Model.Products != null && Model.Products.Count > 0)
+        {
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-md-3 mb-4 product-card" data-category="@product.category">
+                    <div class="card">
+                        <img src="@product.image" class="card-img-top" alt="@product.title" />
+                        <div class="card-body">
+                            <h5 class="card-title">@product.title</h5>
+                            <p class="card-text">@product.description</p>
+                            <p class="card-text"><strong>@product.price</strong></p>
+                            <p class="card-text"><small class="text-muted">@product.category</small></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No products available.</p>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryLinks = document.querySelectorAll('.category-link');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const category = link.getAttribute('data-category');
+
+                productCards.forEach(card => {
+                    if (card.getAttribute('data-category') === category || category === '') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
